@@ -159,6 +159,17 @@ export default function EssentialsScreen() {
         The Essentials of Islam
       </Text>
 
+      <Text
+        style={{
+          fontSize: 15,
+          marginBottom: 25,
+          color: textColor,
+          opacity: 0.7,
+        }}
+      >
+        A guided journey through the essentials of Islam.
+      </Text>
+
       {/* Progress */}
       <View style={styles.progressContainer}>
         <Text style={[styles.progressLabel, { color: textColor }]}>
