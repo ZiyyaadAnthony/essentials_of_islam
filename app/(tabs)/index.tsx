@@ -155,7 +155,9 @@ export default function EssentialsScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor }]}>
-      <Text style={[styles.header, { color: textColor }]}>The Essentials</Text>
+      <Text style={[styles.header, { color: textColor }]}>
+        The Essentials of Islam
+      </Text>
 
       {/* Progress */}
       <View style={styles.progressContainer}>

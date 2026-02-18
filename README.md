@@ -1,50 +1,96 @@
-# Welcome to your Expo app 👋
+# Essentials of Islam
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A calm, structured introduction to the essentials of Islam.
 
-## Get started
+Designed for reverts and beginners seeking clarity, guidance, and a steady learning path.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🌿 About the App
 
-2. Start the app
+**Essentials of Islam** is a guided learning app built around the foundational structure of Islam:
 
-   ```bash
-   npx expo start
-   ```
+- **Islam** – Practice and outward submission
+- **Īmān** – Core beliefs and faith
+- **Iḥsān** – Excellence in worship and character
 
-In the output, you'll find options to open the app in a
+Inspired by the structure of the Hadith of Jibrīl, the app provides:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- 15 structured beginner lessons
+- Clear, modern English
+- Short Qur’an and Hadith excerpts
+- Reflection and action steps
+- Progress tracking
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Lessons are organized into sections:
 
-## Get a fresh project
+- Foundations
+- Worship
+- Character
 
-When you're ready, run:
+Recommended order is provided — but never locked.
+
+---
+
+## ✨ Features
+
+- Structured beginner learning path
+- Clean, distraction-free reading experience
+- Section-based organization
+- Lesson completion tracking
+- Light and dark mode support
+- Built with Expo + React Native
+
+---
+
+## 🚀 Running Locally
+
+1. Install dependencies:
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Start the development server:
 
-## Learn more
+```bash
+npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+You can run the app on:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- iOS simulator
+- Android emulator
+- Expo Go
+- Web
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 🛠 Tech Stack
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Expo
+- React Native
+- Expo Router (file-based routing)
+- Firebase (Firestore)
+- AsyncStorage (local progress tracking)
+
+---
+
+## 📖 Purpose
+
+This app is intentionally simple.
+
+No noise.
+No debates.
+No overload.
+
+Just the essentials — clearly explained.
+
+---
+
+## 📜 License
+
+This project is open for learning and personal use.
+All religious texts belong to their respective sources.
+
+---
