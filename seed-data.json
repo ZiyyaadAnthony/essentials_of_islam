@@ -1,0 +1,249 @@
+{
+    "paths": [
+      {
+        "id": "foundations",
+        "title": "Foundations",
+        "description": "Core beliefs and identity in Islam.",
+        "order": 1
+      },
+      {
+        "id": "worship",
+        "title": "Worship",
+        "description": "Understanding Islamic acts of worship.",
+        "order": 2
+      },
+      {
+        "id": "character",
+        "title": "Character",
+        "description": "Purifying the heart and refining conduct.",
+        "order": 3
+      }
+    ],
+    "lessons": [
+      {
+        "id": "what_is_islam",
+        "title": "What Is Islam?",
+        "pathId": "foundations",
+        "order": 1,
+        "blocks": [
+          { "type": "section_title", "content": "Definition" },
+          { "type": "text", "content": "Islam means submission to Allah. It is a conscious decision to surrender your will to the One who created you." },
+          { "type": "text", "content": "It is not a race, culture, or nationality. It is a way of life built upon obedience to revelation." },
+          { "type": "ayah", "content": "Indeed, the religion in the sight of Allah is Islam.", "reference": "Qur’an 3:19" },
+          { "type": "section_title", "content": "Islam Is Action" },
+          { "type": "text", "content": "Islam is not just belief in the heart. It is belief expressed through action." },
+          { "type": "bullet", "content": "Prayer builds discipline." },
+          { "type": "bullet", "content": "Fasting builds self-control." },
+          { "type": "bullet", "content": "Charity builds compassion." },
+          { "type": "reflection", "content": "Where in your life do you already practice submission to something other than Allah?" },
+          { "type": "action", "content": "Today, pause before one decision and consciously choose what pleases Allah." }
+        ]
+      },
+  
+      {
+        "id": "who_is_allah",
+        "title": "Who Is Allah?",
+        "pathId": "foundations",
+        "order": 2,
+        "blocks": [
+          { "type": "section_title", "content": "The One Creator" },
+          { "type": "text", "content": "Allah is the Creator of everything. He has no partners, no equals, and no weaknesses." },
+          { "type": "ayah", "content": "Say: He is Allah, One.", "reference": "Qur’an 112:1" },
+          { "type": "text", "content": "Nothing resembles Him. He is perfect and independent." },
+          { "type": "section_title", "content": "His Attributes" },
+          { "type": "bullet", "content": "All-Knowing" },
+          { "type": "bullet", "content": "All-Powerful" },
+          { "type": "bullet", "content": "Most Merciful" },
+          { "type": "reflection", "content": "Which of Allah’s attributes brings you the most comfort?" },
+          { "type": "reassurance", "content": "Understanding Allah grows gradually. Take your time." }
+        ]
+      },
+  
+      {
+        "id": "what_is_iman",
+        "title": "What Is Īmān?",
+        "pathId": "foundations",
+        "order": 3,
+        "blocks": [
+          { "type": "section_title", "content": "Definition of Īmān" },
+          { "type": "text", "content": "Īmān means belief in the unseen realities revealed by Allah." },
+          { "type": "hadith", "content": "Īmān is to believe in Allah, His angels, His books, His messengers, the Last Day, and divine decree.", "reference": "Hadith Jibrīl" },
+          { "type": "text", "content": "Faith increases with obedience and decreases with neglect." },
+          { "type": "action", "content": "Strengthen your faith today through one small act of worship." }
+        ]
+      },
+  
+      {
+        "id": "five_pillars",
+        "title": "The Five Pillars of Islam",
+        "pathId": "foundations",
+        "order": 4,
+        "blocks": [
+          { "type": "hadith", "content": "Islam is built upon five.", "reference": "Bukhari & Muslim" },
+          { "type": "bullet", "content": "Shahādah" },
+          { "type": "bullet", "content": "Prayer" },
+          { "type": "bullet", "content": "Fasting" },
+          { "type": "bullet", "content": "Zakāt" },
+          { "type": "bullet", "content": "Hajj" },
+          { "type": "reflection", "content": "Which pillar feels most unfamiliar to you right now?" }
+        ]
+      },
+  
+      {
+        "id": "purpose_of_life",
+        "title": "The Purpose of Life",
+        "pathId": "foundations",
+        "order": 5,
+        "blocks": [
+          { "type": "ayah", "content": "I did not create jinn and mankind except to worship Me.", "reference": "Qur’an 51:56" },
+          { "type": "text", "content": "Life is a test. Every choice carries weight." },
+          { "type": "text", "content": "Success is measured by sincerity and obedience." },
+          { "type": "reflection", "content": "How would your daily routine change if you lived for this purpose?" }
+        ]
+      }
+      ,
+      {
+        "id": "purification",
+        "title": "Purification (Tahārah)",
+        "pathId": "worship",
+        "order": 1,
+        "blocks": [
+          { "type": "section_title", "content": "Preparing to Stand Before Allah" },
+          { "type": "text", "content": "Purification is the foundation of worship. Before prayer, a Muslim prepares both physically and spiritually." },
+          { "type": "text", "content": "Cleanliness is not only hygiene. It is readiness to meet your Lord." },
+          { "type": "bullet", "content": "Wudū (minor purification) before prayer." },
+          { "type": "bullet", "content": "Ghusl (major purification) after specific states." },
+          { "type": "text", "content": "Purification reminds us that worship requires intention and preparation." },
+          { "type": "reflection", "content": "How would your mindset change if you viewed purification as preparing for a meeting with Allah?" },
+          { "type": "action", "content": "Perform your next wudū slowly and mindfully." }
+        ]
+      },
+      {
+        "id": "prayer",
+        "title": "Prayer (Salāh)",
+        "pathId": "worship",
+        "order": 2,
+        "blocks": [
+          { "type": "section_title", "content": "The Pillar of the Religion" },
+          { "type": "text", "content": "Prayer is performed five times daily. It structures the believer’s day around remembrance of Allah." },
+          { "type": "hadith", "content": "The first matter the servant will be questioned about on the Day of Judgment is prayer.", "reference": "Tirmidhi" },
+          { "type": "text", "content": "Prayer builds discipline, humility, and connection." },
+          { "type": "bullet", "content": "Fajr" },
+          { "type": "bullet", "content": "Dhuhr" },
+          { "type": "bullet", "content": "Asr" },
+          { "type": "bullet", "content": "Maghrib" },
+          { "type": "bullet", "content": "Isha" },
+          { "type": "reflection", "content": "Which prayer is currently hardest for you to maintain?" },
+          { "type": "action", "content": "Guard one prayer today with full attention and presence." }
+        ]
+      },
+      {
+        "id": "fasting",
+        "title": "Fasting (Sawm)",
+        "pathId": "worship",
+        "order": 3,
+        "blocks": [
+          { "type": "section_title", "content": "Training the Soul" },
+          { "type": "ayah", "content": "Fasting has been prescribed for you so that you may become mindful of Allah.", "reference": "Qur’an 2:183" },
+          { "type": "text", "content": "Fasting builds self-control. It teaches patience, gratitude, and awareness of blessings." },
+          { "type": "text", "content": "It is not only abstaining from food. It is guarding the tongue, eyes, and behavior." },
+          { "type": "reflection", "content": "What habits would improve if you applied the discipline of fasting beyond Ramadan?" },
+          { "type": "action", "content": "Practice one small act of self-restraint today." }
+        ]
+      },
+      {
+        "id": "zakat",
+        "title": "Zakāt",
+        "pathId": "worship",
+        "order": 4,
+        "blocks": [
+          { "type": "section_title", "content": "Purifying Wealth" },
+          { "type": "text", "content": "Zakāt is an obligatory charity given from surplus wealth once it reaches a minimum threshold." },
+          { "type": "text", "content": "It purifies wealth and supports the needy." },
+          { "type": "bullet", "content": "Encourages generosity." },
+          { "type": "bullet", "content": "Reduces greed." },
+          { "type": "bullet", "content": "Builds community responsibility." },
+          { "type": "reflection", "content": "Do you view wealth as ownership or trust from Allah?" }
+        ]
+      },
+      {
+        "id": "hajj",
+        "title": "Hajj",
+        "pathId": "worship",
+        "order": 5,
+        "blocks": [
+          { "type": "section_title", "content": "The Journey of Unity" },
+          { "type": "text", "content": "Hajj is the pilgrimage to Makkah required once in a lifetime for those who are able." },
+          { "type": "text", "content": "Millions gather wearing simple garments, equal before Allah." },
+          { "type": "text", "content": "Hajj teaches humility, sacrifice, and the reality of the Hereafter." },
+          { "type": "reflection", "content": "What would it mean to stand among millions answering Allah’s call?" }
+        ]
+      },
+      {
+        "id": "sincerity",
+        "title": "Sincerity (Ikhlāṣ)",
+        "pathId": "character",
+        "order": 1,
+        "blocks": [
+          { "type": "hadith", "content": "Actions are judged by intentions.", "reference": "Bukhari & Muslim" },
+          { "type": "text", "content": "Sincerity means doing actions purely for Allah, not for praise or recognition." },
+          { "type": "text", "content": "Hidden good deeds strengthen sincerity." },
+          { "type": "reflection", "content": "Would you still do this good deed if no one ever knew?" },
+          { "type": "action", "content": "Perform one good deed today that no one else sees." }
+        ]
+      },
+      {
+        "id": "guarding_tongue",
+        "title": "Guarding the Tongue",
+        "pathId": "character",
+        "order": 2,
+        "blocks": [
+          { "type": "hadith", "content": "Whoever believes in Allah and the Last Day, let him speak good or remain silent.", "reference": "Bukhari & Muslim" },
+          { "type": "text", "content": "The tongue can build or destroy relationships." },
+          { "type": "bullet", "content": "Avoid gossip." },
+          { "type": "bullet", "content": "Avoid lying." },
+          { "type": "bullet", "content": "Avoid harsh speech." },
+          { "type": "action", "content": "Pause before speaking today. Ask: Is this necessary and kind?" }
+        ]
+      },
+      {
+        "id": "avoiding_pride",
+        "title": "Avoiding Pride",
+        "pathId": "character",
+        "order": 3,
+        "blocks": [
+          { "type": "text", "content": "Pride means rejecting truth and looking down on others." },
+          { "type": "text", "content": "Humility brings a person closer to Allah." },
+          { "type": "reflection", "content": "Where might pride be hiding in your behavior?" }
+        ]
+      },
+      {
+        "id": "avoiding_envy",
+        "title": "Avoiding Envy",
+        "pathId": "character",
+        "order": 4,
+        "blocks": [
+          { "type": "text", "content": "Envy harms the heart and destroys gratitude." },
+          { "type": "text", "content": "Instead of envying, make duʿā for others and seek improvement for yourself." },
+          { "type": "action", "content": "Replace one jealous thought today with a prayer for that person." }
+        ]
+      },
+      {
+        "id": "good_character",
+        "title": "Good Character",
+        "pathId": "character",
+        "order": 5,
+        "blocks": [
+          { "type": "hadith", "content": "I was sent to perfect good character.", "reference": "Ahmad" },
+          { "type": "text", "content": "Character reflects faith. Honesty, patience, and mercy are signs of belief." },
+          { "type": "bullet", "content": "Be truthful." },
+          { "type": "bullet", "content": "Be patient." },
+          { "type": "bullet", "content": "Be merciful." },
+          { "type": "reflection", "content": "Which character trait do you most need to strengthen?" }
+        ]
+      }
+      
+    ]
+  }
+  
+  
