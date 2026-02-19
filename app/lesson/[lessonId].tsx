@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -5,9 +6,16 @@ import {
   TouchableOpacity,
   ActivityIndicator,
 } from "react-native";
-import { useLocalSearchParams } from "expo-router";
-import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
+import { useLocalSearchParams, router } from "expo-router";
+import {
+  doc,
+  getDoc,
+  collection,
+  getDocs,
+  query,
+  where,
+  orderBy,
+} from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { useThemeColor } from "@/hooks/use-theme-color";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -22,15 +30,19 @@ type Block = {
 type Lesson = {
   id: string;
   title: string;
+  pathId: string;
+  order: number;
   blocks?: Block[];
 };
 
 export default function LessonScreen() {
   const { lessonId } = useLocalSearchParams<{ lessonId: string }>();
+
   const [lesson, setLesson] = useState<Lesson | null>(null);
   const [completed, setCompleted] = useState(false);
+  const [nextLessonId, setNextLessonId] = useState<string | null>(null);
 
-  // ✅ ALL HOOKS AT TOP
+  // Theme hooks (ALL at top)
   const textColor = useThemeColor({}, "text");
   const backgroundColor = useThemeColor({}, "background");
   const tintColor = useThemeColor({}, "tint");
@@ -50,7 +62,7 @@ export default function LessonScreen() {
     "background"
   );
 
-  // Fetch lesson
+  // 🔥 Fetch lesson + next lesson
   useEffect(() => {
     async function fetchLesson() {
       if (!lessonId) return;
@@ -58,23 +70,43 @@ export default function LessonScreen() {
       const docRef = doc(db, "lessons", lessonId);
       const snapshot = await getDoc(docRef);
 
-      if (snapshot.exists()) {
-        setLesson(snapshot.data() as Lesson);
+      if (!snapshot.exists()) return;
+
+      const lessonData = snapshot.data() as Lesson;
+      setLesson(lessonData);
+
+      // Fetch all lessons in same path
+      const q = query(
+        collection(db, "lessons"),
+        where("pathId", "==", lessonData.pathId),
+        orderBy("order")
+      );
+
+      const allLessonsSnapshot = await getDocs(q);
+      const allLessons = allLessonsSnapshot.docs.map(
+        (doc) => doc.data() as Lesson
+      );
+
+      const currentIndex = allLessons.findIndex((l) => l.id === lessonData.id);
+
+      if (currentIndex !== -1 && currentIndex < allLessons.length - 1) {
+        setNextLessonId(allLessons[currentIndex + 1].id);
+      } else {
+        setNextLessonId(null);
       }
     }
 
     fetchLesson();
   }, [lessonId]);
 
-  // Check completion
+  // 🔥 Check completion
   useEffect(() => {
     async function checkCompletion() {
       if (!lessonId) return;
 
       const stored = await AsyncStorage.getItem("completedLessons");
-      const completedLessons: string[] = stored ? JSON.parse(stored) : [];
-
-      setCompleted(completedLessons.includes(lessonId));
+      const parsed: string[] = stored ? JSON.parse(stored) : [];
+      setCompleted(parsed.includes(lessonId));
     }
 
     checkCompletion();
@@ -84,20 +116,17 @@ export default function LessonScreen() {
     if (!lessonId) return;
 
     const stored = await AsyncStorage.getItem("completedLessons");
-    let completedLessons: string[] = stored ? JSON.parse(stored) : [];
+    let parsed: string[] = stored ? JSON.parse(stored) : [];
 
-    if (completedLessons.includes(lessonId)) {
-      completedLessons = completedLessons.filter((id) => id !== lessonId);
+    if (parsed.includes(lessonId)) {
+      parsed = parsed.filter((id) => id !== lessonId);
       setCompleted(false);
     } else {
-      completedLessons.push(lessonId);
+      parsed.push(lessonId);
       setCompleted(true);
     }
 
-    await AsyncStorage.setItem(
-      "completedLessons",
-      JSON.stringify(completedLessons)
-    );
+    await AsyncStorage.setItem("completedLessons", JSON.stringify(parsed));
   }
 
   if (!lesson) {
@@ -124,7 +153,6 @@ export default function LessonScreen() {
         }}
         showsVerticalScrollIndicator={false}
       >
-        {/* Title */}
         <Text
           style={{
             fontSize: 26,
@@ -136,7 +164,6 @@ export default function LessonScreen() {
           {lesson.title}
         </Text>
 
-        {/* Blocks */}
         {lesson.blocks?.map((block, index) => {
           switch (block.type) {
             case "text":
@@ -168,85 +195,6 @@ export default function LessonScreen() {
                 >
                   {block.content}
                 </Text>
-              );
-
-            case "bullet":
-              return (
-                <Text
-                  key={index}
-                  style={{
-                    fontSize: 16,
-                    lineHeight: 26,
-                    marginBottom: 8,
-                    color: textColor,
-                  }}
-                >
-                  • {block.content}
-                </Text>
-              );
-
-            case "ayah":
-              return (
-                <View
-                  key={index}
-                  style={{
-                    padding: 18,
-                    borderLeftWidth: 4,
-                    borderLeftColor: tintColor,
-                    marginBottom: 20,
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontSize: 18,
-                      textAlign: "right",
-                      marginBottom: 10,
-                      color: textColor,
-                    }}
-                  >
-                    {block.content}
-                  </Text>
-
-                  {block.reference && (
-                    <Text
-                      style={{
-                        fontSize: 14,
-                        opacity: 0.7,
-                        color: textColor,
-                      }}
-                    >
-                      {block.reference}
-                    </Text>
-                  )}
-                </View>
-              );
-
-            case "hadith":
-              return (
-                <View key={index} style={{ marginBottom: 20 }}>
-                  <Text
-                    style={{
-                      fontStyle: "italic",
-                      fontSize: 16,
-                      lineHeight: 26,
-                      color: textColor,
-                    }}
-                  >
-                    {block.content}
-                  </Text>
-                  {block.reference && (
-                    <Text
-                      style={{
-                        fontSize: 14,
-                        opacity: 0.7,
-                        marginTop: 6,
-                        color: textColor,
-                      }}
-                    >
-                      {block.reference}
-                    </Text>
-                  )}
-                </View>
               );
 
             case "reassurance":
@@ -345,6 +293,30 @@ export default function LessonScreen() {
             {completed ? "Mark as Incomplete" : "Mark as Completed"}
           </Text>
         </TouchableOpacity>
+
+        {/* Next Lesson Button */}
+        {nextLessonId && (
+          <TouchableOpacity
+            onPress={() =>
+              router.replace({
+                pathname: "/lesson/[lessonId]",
+                params: { lessonId: nextLessonId },
+              })
+            }
+            style={{
+              marginTop: 16,
+              paddingVertical: 18,
+              borderRadius: 12,
+              borderWidth: 1,
+              borderColor: tintColor,
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ color: tintColor, fontWeight: "600", fontSize: 16 }}>
+              Next Lesson →
+            </Text>
+          </TouchableOpacity>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
