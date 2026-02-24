@@ -8,7 +8,7 @@ import {
   StyleSheet,
 } from "react-native";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/firebase/firebase";
+import { db } from "../../firebase/firebase";
 import { router } from "expo-router";
 import { useThemeColor } from "@/hooks/use-theme-color";
 import AsyncStorage from "@react-native-async-storage/async-storage";

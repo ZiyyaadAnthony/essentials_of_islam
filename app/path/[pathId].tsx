@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { collection, getDocs, query, where, orderBy } from "firebase/firestore";
-import { db } from "@/firebase/firebase";
+import { db } from "../../firebase/firebase";
 import { Link } from "expo-router";
 import { useThemeColor } from "@/hooks/use-theme-color";
 import AsyncStorage from "@react-native-async-storage/async-storage";

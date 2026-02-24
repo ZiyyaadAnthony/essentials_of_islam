@@ -16,7 +16,7 @@ import {
   where,
   orderBy,
 } from "firebase/firestore";
-import { db } from "@/firebase/firebase";
+import { db } from "../../firebase/firebase";
 import { useThemeColor } from "@/hooks/use-theme-color";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { SafeAreaView } from "react-native-safe-area-context";
