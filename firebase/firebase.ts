@@ -11,7 +11,6 @@ const firebaseConfig = {
   appId: "1:646178704646:web:712b819263e5e2c2992287",
 };
 
-// Prevent re-initialization during Fast Refresh
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 export const db = getFirestore(app);
